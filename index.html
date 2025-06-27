@@ -13,11 +13,13 @@
       scroll-behavior: smooth;
     }
 
-    body {
+    body, html {
       font-family: 'Poppins', sans-serif;
       background: #f3f4f6;
       color: #1E3A8A;
       line-height: 1.6;
+      height: 100%;
+      overflow-x: hidden;
     }
 
     /* Header fijo arriba, blanco con texto azul */
@@ -106,6 +108,8 @@
         transform: translateX(100%);
         transition: transform 0.3s ease;
         border-left: 1px solid #ddd;
+        overflow-y: auto;
+        z-index: 10000;
       }
 
       nav.active {
@@ -148,9 +152,9 @@
       align-items: center;
       text-align: center;
       color: #1E3A8A;
-      border-radius: 0;
+      margin-left: calc(-50vw + 50%);
       margin-bottom: 60px;
-      box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.5); /* sutil overlay blanco para legibilidad */
+      box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.5);
     }
 
     .hero h1 {
@@ -209,15 +213,19 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
-    form {
+    /* Formulario */
+    section#contacto form {
+      max-width: 500px;
+      width: 100%;
+      margin: auto;
       display: flex;
       flex-direction: column;
       gap: 15px;
-      max-width: 500px;
-      margin: auto 0 80px;
     }
 
     input, textarea {
+      box-sizing: border-box;
+      width: 100%;
       padding: 12px;
       font-size: 1em;
       border: 1px solid #ccc;
@@ -246,6 +254,8 @@
       text-align: center;
       padding: 20px 10px;
       border-top: 1px solid #ddd;
+      max-width: 1000px;
+      margin: auto;
     }
 
     footer a {
@@ -295,4 +305,67 @@
         <img src="https://source.unsplash.com/600x400/?kitchen" alt="Cocina amplia" />
         <img src="https://source.unsplash.com/600x400/?bedroom" alt="Habitación elegante" />
         <img src="https://source.unsplash.com/600x400/?bathroom" alt="Baño moderno" />
-        <img src="https://source.unsplash.com
+        <img src="https://source.unsplash.com/600x400/?garden" alt="Jardín atractivo" />
+        <img src="https://source.unsplash.com/600x400/?apartment" alt="Apartamento moderno" />
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Tu nombre" required />
+        <input type="email" name="email" placeholder="Tu correo electrónico" required />
+        <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar Mensaje</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Fotografía Inmobiliaria |
+    <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a> |
+    <a href="mailto:tuemail@dominio.com">Correo</a>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+
+      // Accessibility toggle
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+    });
+
+    // Close menu on link click (mobile)
+    function closeMenu() {
+      if(window.innerWidth <= 768) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', false);
+      }
+    }
+
+    // Optional: close menu if window resizes bigger
+    window.addEventListener('resize', () => {
+      if(window.innerWidth > 768) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', false);
+      }
+    });
+
+    // Form submission alert
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('¡Gracias por contactarnos! Responderemos pronto.');
+      form.reset();
+      closeMenu();
+    });
+  </script>
+</body>
+</html>
