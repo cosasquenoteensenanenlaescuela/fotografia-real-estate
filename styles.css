@@ -75,7 +75,7 @@ h2 { text-align: center; font-size: 2em; margin-bottom: 30px; }
 /* Contacto dinámico */
 .contacto-section {
   position: relative;
-  background: url('https://source.unsplash.com/1600x900/?modern-house,real-estate') center center / cover no-repeat;
+  background: url('photos/2.jpeg') center center / cover no-repeat;
   padding: 100px 20px 60px 20px; /* ajustado */
   color: #ffffff;
   min-height: auto; /* evita overlap con padding */
