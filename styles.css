@@ -73,7 +73,7 @@ nav a:hover { background: #1E3A8A; color: #ffffff; }
 }
 
 /* Secciones */
-section { padding: 0px; max-width: 1000px; margin: auto; }
+/*section { padding: 0px; max-width: 1000px; margin: auto; } */
 h2 { text-align: center; font-size: 2em; margin-bottom: 30px; }
 
 /* Galería */
