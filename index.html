@@ -9,17 +9,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-    body, html { font-family: 'Poppins', sans-serif; background: #ffffff; color: #1E3A8A; line-height: 1.6; overflow-x: hidden; }
-
-    header { position: fixed; top: 0; left: 0; width: 100%; background: #ffffff; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; }
-    .logo img { height: 60px; width: auto; }
-
-    nav {
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  color: #1E3A8A;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+.logo img {
+  height: 60px;
+  width: auto;
+}
+nav {
   display: flex;
   gap: 20px;
 }
-
 nav a {
   color: #1E3A8A;
   text-decoration: none;
@@ -28,12 +49,10 @@ nav a {
   border-radius: 4px;
   transition: background 0.3s ease;
 }
-
 nav a:hover {
   background: #1E3A8A;
   color: #ffffff;
 }
-
 .hamburger {
   display: none;
   flex-direction: column;
@@ -41,14 +60,23 @@ nav a:hover {
   width: 25px;
   height: 20px;
   justify-content: space-between;
+  z-index: 1100;
 }
-
 .hamburger div {
   width: 100%;
   height: 3px;
   background: #1E3A8A;
   border-radius: 2px;
   transition: all 0.3s ease;
+}
+.hamburger.active div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active div:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 @media (max-width: 768px) {
@@ -65,57 +93,125 @@ nav a:hover {
     gap: 30px;
     transform: translateY(-100%);
     transition: transform 0.3s ease;
-    z-index: 999;
+    z-index: 1000;
   }
-
   nav.active {
     transform: translateY(0);
   }
-
   nav a {
     font-size: 1.5em;
     padding: 15px;
   }
-
   .hamburger {
     display: flex;
   }
+}
 
-  .hamburger.active div:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+/* Hero */
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url('https://source.unsplash.com/1600x900/?house,modern') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+.hero h1 {
+  font-size: 3em;
+  max-width: 90%;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.hero p {
+  font-size: 1.2em;
+  margin-top: 15px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2em;
   }
-
-  .hamburger.active div:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active div:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+  .hero p {
+    font-size: 1em;
   }
 }
 
-    main, section, footer { max-width: 1000px; margin: auto; padding: 90px 20px 40px; }
-    .hero { width: 100vw; height: 80vh; background: url('photos/1.jpeg') center center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #1E3A8A; margin-left: calc(-50vw + 50%); box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.4); }
-    .hero h1 { font-size: 2.5em; font-weight: 600; margin-bottom: 15px; text-shadow: 0 1px 4px rgba(255,255,255,0.8); }
-    .hero p { font-size: 1.2em; margin-bottom: 25px; text-shadow: 0 1px 4px rgba(255,255,255,0.8); }
+/* General Sections */
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
 
-    .btn { background: #1E3A8A; color: #ffffff; padding: 12px 30px; border: none; border-radius: 5px; font-size: 1em; cursor: pointer; text-decoration: none; transition: background 0.3s ease; }
-    .btn:hover { background: #2563EB; }
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+.gallery img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
 
-    section h2 { text-align: center; font-size: 2em; margin-bottom: 30px; }
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+input, textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 100%;
+}
+button {
+  background: #1E3A8A;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: #2563EB;
+}
 
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 30px; }
-    .gallery a img { width: 100%; border-radius: 8px; transition: transform 0.3s ease; }
-    .gallery a img:hover { transform: scale(1.05); }
+/* Footer */
+footer {
+  background: #ffffff;
+  color: #1E3A8A;
+  text-align: center;
+  padding: 20px 10px;
+  border-top: 1px solid #ddd;
+}
+footer a {
+  color: #1E3A8A;
+  text-decoration: none;
+  font-weight: 600;
+}
+footer a:hover {
+  text-decoration: underline;
+  color: #2563EB;
+}
+</style>
 
-    form { max-width: 500px; width: 100%; margin: auto; display: flex; flex-direction: column; gap: 15px; }
-    input, textarea { padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; width: 100%; }
-    button { background: #1E3A8A; color: #ffffff; border: none; padding: 12px; border-radius: 5px; cursor: pointer; }
-    button:hover { background: #2563EB; }
-
-    footer { background: #ffffff; color: #1E3A8A; text-align: center; padding: 20px 10px; border-top: 1px solid #ddd; }
-    footer a { color: #1E3A8A; text-decoration: none; font-weight: 600; }
-    footer a:hover { text-decoration: underline; color: #2563EB; }
   </style>
 </head>
 <body>
