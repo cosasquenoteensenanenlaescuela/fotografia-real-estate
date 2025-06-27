@@ -76,8 +76,13 @@ h2 { text-align: center; font-size: 2em; margin-bottom: 30px; }
 .contacto-section {
   position: relative;
   background: url('https://source.unsplash.com/1600x900/?modern-house,real-estate') center center / cover no-repeat;
-  padding: 120px 20px 80px 20px; color: #ffffff; min-height: 100vh;
-  display: flex; align-items: center; justify-content: center; text-align: center;
+  padding: 100px 20px 60px 20px; /* ajustado */
+  color: #ffffff;
+  min-height: auto; /* evita overlap con padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .contacto-overlay {
   background: rgba(0, 0, 0, 0.6); padding: 60px 20px; border-radius: 10px;
