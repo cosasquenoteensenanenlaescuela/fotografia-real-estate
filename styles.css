@@ -31,7 +31,7 @@ nav a:hover { background: #1E3A8A; color: #ffffff; }
 .hero {
   width: 100vw;
   height: 100vh;
-  background: url('photos/2.jpeg') center center;
+  background: url('photos/2.jpeg');
   display: flex;
   flex-direction: column;
   align-items: center;
