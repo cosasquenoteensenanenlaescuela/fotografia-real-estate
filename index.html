@@ -3,23 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fotografía Profesional de Propiedades en Venta y Alquiler | Puerto Rico</title>
-  <meta name="description" content="Atrae más compradores e inquilinos con fotografías profesionales para propiedades, AirBnbs, y negocios en Puerto Rico. Calidad que destaca tu propiedad.">
-  <meta name="keywords" content="fotografía inmobiliaria, fotos para propiedades, fotografía AirBnb, alquiler, venta de propiedades, Puerto Rico, real estate photography">
+  <title>Fotografía Profesional de Propiedades | Puerto Rico</title>
+  <meta name="description" content="Fotografía profesional para propiedades en venta, alquiler a corto y largo plazo, AirBnbs y negocios en Puerto Rico. Atrae más clientes con imágenes de impacto.">
+  <meta name="keywords" content="fotografía inmobiliaria, fotos propiedades, fotografía AirBnb, alquiler, venta, negocios, Puerto Rico, real estate photography">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-    body, html { font-family: 'Poppins', sans-serif; background: #ffffff; color: #1E3A8A; line-height: 1.6; height: 100%; overflow-x: hidden; }
+    body, html { font-family: 'Poppins', sans-serif; background: #ffffff; color: #1E3A8A; line-height: 1.6; overflow-x: hidden; }
 
-    header { position: fixed; top: 0; left: 0; width: 100%; background: #ffffff; color: #1E3A8A; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; z-index: 10000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-
+    header { position: fixed; top: 0; left: 0; width: 100%; background: #ffffff; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; }
     .logo img { height: 60px; width: auto; }
     @media (max-width: 768px) { .logo img { height: 50px; } }
 
     nav { display: flex; gap: 20px; }
-    nav a { color: #1E3A8A; text-decoration: none; font-weight: 600; padding: 8px 10px; border-radius: 4px; transition: background 0.3s ease, color 0.3s ease; }
-    nav a:hover { background: #1E3A8A; color: white; }
+    nav a { color: #1E3A8A; text-decoration: none; font-weight: 600; padding: 8px 10px; border-radius: 4px; transition: background 0.3s ease; }
+    nav a:hover { background: #1E3A8A; color: #ffffff; }
 
     .hamburger { display: none; flex-direction: column; cursor: pointer; width: 25px; height: 20px; justify-content: space-between; }
     .hamburger div { width: 100%; height: 3px; background: #1E3A8A; border-radius: 2px; transition: all 0.3s ease; }
@@ -28,33 +27,33 @@
     .hamburger.active div:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
     @media (max-width: 768px) {
-      nav { position: fixed; top: 60px; right: 0; background: #ffffff; flex-direction: column; width: 200px; height: calc(100% - 60px); padding: 20px; box-shadow: -2px 0 8px rgba(0,0,0,0.1); transform: translateX(100%); transition: transform 0.3s ease; border-left: 1px solid #ddd; overflow-y: auto; z-index: 10000; }
+      nav { position: fixed; top: 60px; right: 0; background: #ffffff; flex-direction: column; width: 200px; height: calc(100% - 60px); padding: 20px; box-shadow: -2px 0 8px rgba(0,0,0,0.1); transform: translateX(100%); transition: transform 0.3s ease; border-left: 1px solid #ddd; }
       nav.active { transform: translateX(0); }
-      nav a { padding: 15px 10px; font-size: 1.2em; }
+      nav a { padding: 15px 10px; font-size: 1.1em; }
       .hamburger { display: flex; }
     }
 
-    main, section, footer { padding-top: 70px; max-width: 1000px; margin: auto; padding-left: 20px; padding-right: 20px; }
-    .hero { width: 100vw; height: 80vh; background: url('https://source.unsplash.com/1600x900/?real-estate,house') center center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #1E3A8A; margin-left: calc(-50vw + 50%); margin-bottom: 60px; box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.4); }
+    main, section, footer { max-width: 1000px; margin: auto; padding: 90px 20px 40px; }
+    .hero { width: 100vw; height: 80vh; background: url('https://source.unsplash.com/1600x900/?real-estate,house') center center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #1E3A8A; margin-left: calc(-50vw + 50%); box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.4); }
     .hero h1 { font-size: 2.5em; font-weight: 600; margin-bottom: 15px; text-shadow: 0 1px 4px rgba(255,255,255,0.8); }
     .hero p { font-size: 1.2em; margin-bottom: 25px; text-shadow: 0 1px 4px rgba(255,255,255,0.8); }
 
-    .btn { background: #1E3A8A; color: white; padding: 12px 30px; border: none; border-radius: 5px; font-size: 1em; cursor: pointer; text-decoration: none; transition: background 0.3s ease; }
+    .btn { background: #1E3A8A; color: #ffffff; padding: 12px 30px; border: none; border-radius: 5px; font-size: 1em; cursor: pointer; text-decoration: none; transition: background 0.3s ease; }
     .btn:hover { background: #2563EB; }
 
     section h2 { text-align: center; font-size: 2em; margin-bottom: 30px; }
 
     .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 30px; }
-    .gallery a img { width: 100%; height: auto; border-radius: 8px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .gallery a img:hover { transform: scale(1.05); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+    .gallery a img { width: 100%; border-radius: 8px; transition: transform 0.3s ease; }
+    .gallery a img:hover { transform: scale(1.05); }
 
-    section#contacto form { max-width: 500px; width: 100%; margin: auto; display: flex; flex-direction: column; gap: 15px; }
-    input, textarea { padding: 12px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px; resize: vertical; width: 100%; }
-    button { background: #1E3A8A; color: white; padding: 12px; font-size: 1em; border: none; border-radius: 5px; cursor: pointer; transition: background 0.3s ease; }
+    form { max-width: 500px; width: 100%; margin: auto; display: flex; flex-direction: column; gap: 15px; }
+    input, textarea { padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; width: 100%; }
+    button { background: #1E3A8A; color: #ffffff; border: none; padding: 12px; border-radius: 5px; cursor: pointer; }
     button:hover { background: #2563EB; }
 
     footer { background: #ffffff; color: #1E3A8A; text-align: center; padding: 20px 10px; border-top: 1px solid #ddd; }
-    footer a { color: #1E3A8A; text-decoration: none; margin: 0 10px; font-weight: 600; }
+    footer a { color: #1E3A8A; text-decoration: none; font-weight: 600; }
     footer a:hover { text-decoration: underline; color: #2563EB; }
   </style>
 </head>
@@ -62,62 +61,46 @@
 
   <header>
     <div class="logo">
-      <img src="https://via.placeholder.com/180x60?text=LOGO" alt="Logo Fotografía Propiedades">
+      <img src="Logo-Without-Background-Landscape.png" alt="Logo Fotografía Propiedades">
     </div>
     <nav id="nav-menu">
-      <a href="#inicio" onclick="closeMenu()">Inicio</a>
-      <a href="#galeria" onclick="closeMenu()">Galería</a>
-      <a href="galeria.html" onclick="closeMenu()">Portafolio Completo</a>
-      <a href="#contacto" onclick="closeMenu()">Contacto</a>
+      <a href="todas-fotos.html" onclick="closeMenu()">Todas las Fotos</a>
+      <a href="contacto.html" onclick="closeMenu()">Contacto</a>
     </nav>
-    <div class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" role="button" tabindex="0">
+    <div class="hamburger" id="hamburger">
       <div></div><div></div><div></div>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="inicio">
+    <section class="hero">
       <h1>Fotografía de Propiedades en Puerto Rico</h1>
-      <p>Imágenes profesionales que atraen compradores e inquilinos para ventas y alquileres.</p>
-      <a href="#galeria" class="btn">Ver Fotos Destacadas</a>
+      <p>Atrae compradores e inquilinos con imágenes que venden.</p>
+      <a href="todas-fotos.html" class="btn">Ver Todas las Fotos</a>
     </section>
 
     <section id="galeria">
-      <h2>Galería Destacada</h2>
+      <h2>Fotos Destacadas</h2>
       <div class="gallery">
-        <a href="https://source.unsplash.com/1200x800/?real-estate,modern-house" data-lightbox="galeria" data-title="Casa Moderna">
-          <img src="https://source.unsplash.com/600x400/?real-estate,modern-house" alt="Casa Moderna" />
-        </a>
-        <a href="https://source.unsplash.com/1200x800/?real-estate,living-room" data-lightbox="galeria" data-title="Sala de estar elegante">
-          <img src="https://source.unsplash.com/600x400/?real-estate,living-room" alt="Sala de estar elegante" />
-        </a>
-        <a href="https://source.unsplash.com/1200x800/?real-estate,kitchen" data-lightbox="galeria" data-title="Cocina moderna">
-          <img src="https://source.unsplash.com/600x400/?real-estate,kitchen" alt="Cocina moderna" />
-        </a>
-        <a href="https://source.unsplash.com/1200x800/?real-estate,bedroom" data-lightbox="galeria" data-title="Habitación cómoda">
-          <img src="https://source.unsplash.com/600x400/?real-estate,bedroom" alt="Habitación cómoda" />
-        </a>
-      </div>
-      <div style="text-align: center;">
-        <a href="galeria.html" class="btn">Ver Más Fotos</a>
+        <a href="https://source.unsplash.com/1200x800/?real-estate,living-room" data-lightbox="galeria"><img src="https://source.unsplash.com/600x400/?real-estate,living-room" alt="Sala moderna" /></a>
+        <a href="https://source.unsplash.com/1200x800/?real-estate,kitchen" data-lightbox="galeria"><img src="https://source.unsplash.com/600x400/?real-estate,kitchen" alt="Cocina moderna" /></a>
+        <a href="https://source.unsplash.com/1200x800/?real-estate,bedroom" data-lightbox="galeria"><img src="https://source.unsplash.com/600x400/?real-estate,bedroom" alt="Habitación amplia" /></a>
       </div>
     </section>
 
     <section id="contacto">
-      <h2>Contacto</h2>
-      <form id="contactForm">
-        <input type="text" name="name" placeholder="Tu nombre" required />
-        <input type="email" name="email" placeholder="Tu correo electrónico" required />
-        <textarea name="message" rows="5" placeholder="Cuéntanos sobre tu propiedad" required></textarea>
+      <h2>Contáctanos</h2>
+      <form>
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="email" placeholder="Tu correo electrónico" required>
+        <textarea rows="5" placeholder="Cuéntanos sobre tu propiedad"></textarea>
         <button type="submit">Enviar Mensaje</button>
       </form>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 Fotografía Inmobiliaria en Puerto Rico |
-    <a href="https://instagram.com/" target="_blank">Instagram</a> |
-    <a href="mailto:tuemail@dominio.com">Correo</a>
+    &copy; 2025 Fotografía Inmobiliaria | <a href="contacto.html">Contacto</a>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
@@ -127,30 +110,11 @@
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       navMenu.classList.toggle('active');
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', !expanded);
     });
     function closeMenu() {
-      if(window.innerWidth <= 768) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', false);
-      }
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
     }
-    window.addEventListener('resize', () => {
-      if(window.innerWidth > 768) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', false);
-      }
-    });
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('¡Gracias por contactarnos! Te responderemos pronto.');
-      form.reset();
-      closeMenu();
-    });
   </script>
 </body>
 </html>
