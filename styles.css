@@ -1,0 +1,113 @@
+/* Reset y estructura */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; height: 100%; font-family: 'Poppins', sans-serif; overflow-x: hidden; background: #ffffff; color: #1E3A8A; }
+
+/* Header */
+header {
+  position: fixed; top: 0; left: 0; width: 100%;
+  background: #ffffff; display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000;
+}
+.logo img { height: 70px; width: auto; }
+nav { display: flex; gap: 20px; }
+nav a { color: #1E3A8A; text-decoration: none; font-weight: 600; padding: 8px 10px; border-radius: 4px; transition: background 0.3s ease; }
+nav a:hover { background: #1E3A8A; color: #ffffff; }
+.hamburger { display: none; flex-direction: column; cursor: pointer; width: 25px; height: 20px; justify-content: space-between; z-index: 1100; }
+.hamburger div { width: 100%; height: 3px; background: #1E3A8A; border-radius: 2px; transition: all 0.3s ease; }
+.hamburger.active div:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active div:nth-child(2) { opacity: 0; }
+.hamburger.active div:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+@media (max-width: 768px) {
+  nav { position: fixed; top: 0; left: 0; background: #ffffff; flex-direction: column;
+    width: 100%; height: 100vh; justify-content: center; align-items: center; gap: 30px;
+    transform: translateY(-100%); transition: transform 0.3s ease; z-index: 1000; }
+  nav.active { transform: translateY(0); }
+  nav a { font-size: 1.5em; padding: 15px; }
+  .hamburger { display: flex; }
+}
+
+/* Hero */
+.hero {
+  width: 100vw; height: 100vh;
+  background: url('https://source.unsplash.com/1600x900/?modern-house') center center / cover no-repeat;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 0 20px; color: #ffffff; position: relative;
+}
+.hero::before {
+  content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.4); z-index: 1;
+}
+.hero-content { position: relative; z-index: 2; }
+.hero-content h1 { font-size: 3em; max-width: 90%; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+.hero-content p { font-size: 1.2em; margin-bottom: 30px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+.hero-content a {
+  display: inline-block; background: #1E3A8A; color: #ffffff; padding: 12px 25px;
+  border-radius: 5px; text-decoration: none; font-weight: 600; transition: background 0.3s ease;
+}
+.hero-content a:hover { background: #2563EB; }
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 2em; }
+  .hero-content p { font-size: 1em; }
+}
+
+/* Secciones */
+section { padding: 80px 20px; max-width: 1000px; margin: auto; }
+h2 { text-align: center; font-size: 2em; margin-bottom: 30px; }
+
+/* Galería */
+.gallery {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;
+}
+.gallery a img {
+  width: 100%; border-radius: 8px; transition: transform 0.3s ease;
+}
+.gallery a img:hover { transform: scale(1.05); }
+
+/* Botones estilo */
+.boton, .boton-ver-mas {
+  display: inline-block; background: #1E3A8A; color: #ffffff;
+  padding: 12px 25px; border-radius: 5px; text-decoration: none;
+  font-weight: 600; transition: background 0.3s ease; cursor: pointer;
+}
+.boton:hover, .boton-ver-mas:hover { background: #2563EB; }
+
+/* Contacto dinámico */
+.contacto-section {
+  position: relative;
+  background: url('https://source.unsplash.com/1600x900/?modern-house,real-estate') center center / cover no-repeat;
+  padding: 120px 20px 80px 20px; color: #ffffff; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+}
+.contacto-overlay {
+  background: rgba(0, 0, 0, 0.6); padding: 60px 20px; border-radius: 10px;
+  max-width: 500px; width: 90%;
+}
+.contacto-overlay h2 { font-size: 2em; margin-bottom: 15px; }
+.contacto-overlay p { font-size: 1.1em; margin-bottom: 20px; }
+.social-icons {
+  display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;
+}
+.social-icons a img {
+  width: 40px; height: 40px; transition: transform 0.3s ease;
+}
+.social-icons a img:hover { transform: scale(1.15); }
+form { display: flex; flex-direction: column; gap: 15px; }
+input, textarea {
+  padding: 12px; border: none; border-radius: 5px;
+  font-size: 1em; width: 100%;
+}
+button {
+  background: #1E3A8A; color: #ffffff; border: none;
+  padding: 12px; border-radius: 5px; font-weight: 600;
+  cursor: pointer; transition: background 0.3s ease;
+}
+button:hover { background: #2563EB; }
+
+/* Footer */
+footer {
+  background: #ffffff; color: #1E3A8A; text-align: center;
+  padding: 20px 10px; border-top: 1px solid #ddd;
+}
+footer a { color: #1E3A8A; text-decoration: none; font-weight: 600; }
+footer a:hover { text-decoration: underline; color: #2563EB; }
