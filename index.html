@@ -211,15 +211,18 @@ input, textarea {
   font-size: 1em;
   width: 100%;
 }
-button {
+.button {
+  display: inline-block;
   background: #1E3A8A;
   color: #ffffff;
-  border: none;
-  padding: 12px;
+  padding: 12px 25px;
   border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
   cursor: pointer;
 }
-button:hover {
+.button:hover {
   background: #2563EB;
 }
 
@@ -262,7 +265,7 @@ footer a:hover {
     <section class="hero">
       <h1>Fotografía de Propiedades en Puerto Rico</h1>
       <p>Atrae compradores e inquilinos con imágenes que venden.</p>
-      <a href="galeria.html" class="btn">Ver Todas las Fotos</a>
+      <a href="galeria.html" class="button">Ver Todas las Fotos</a>
     </section>
 
     <section id="galeria">
@@ -273,7 +276,7 @@ footer a:hover {
         <a href="https://source.unsplash.com/1200x800/?real-estate,bedroom" data-lightbox="galeria"><img src="photos/3.jpeg" alt="Habitación amplia" /></a>
       </div>
       <div style="text-align: center; margin-top: 30px;">
-        <a href="todas-fotos.html" class="boton-ver-mas">Ver Todas las Fotos</a>
+        <a href="todas-fotos.html" class="button">Ver Todas las Fotos</a>
       </div>
     </section>
 
