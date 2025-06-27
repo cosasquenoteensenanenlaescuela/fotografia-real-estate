@@ -30,8 +30,8 @@ nav a:hover { background: #1E3A8A; color: #ffffff; }
 /* Hero */
 .hero {
   width: 100vw;
-  height: 400px;
-  background: url('photos/2.jpeg') center center / cover no-repeat;
+  height: 100vh;
+  background: url('https://source.unsplash.com/1600x900/?modern-house') center center / cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,21 +41,46 @@ nav a:hover { background: #1E3A8A; color: #ffffff; }
   color: #ffffff;
   position: relative;
 }
+
 .hero::before {
-  content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
-  background: rgba(0,0,0,0.4); z-index: 0;
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
-.hero-content { position: relative; z-index: 3; }
-.hero-content h1 { color: font-size: 4em; max-width: 90%; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-.hero-content p { font-size: 1.2em; margin-bottom: 30px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  max-width: 90%;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
 .hero-content a {
-  display: inline-block; background: #1E3A8A; color: #ffffff; padding: 12px 25px;
-  border-radius: 5px; text-decoration: none; font-weight: 600; transition: background 0.3s ease;
+  display: inline-block;
+  background: #1E3A8A;
+  color: #ffffff;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
 }
-.hero-content a:hover { background: #2563EB; }
-@media (max-width: 768px) {
-  .hero-content h1 { font-size: 2em; }
-  .hero-content p { font-size: 1em; }
+
+.hero-content a:hover {
+  background: #2563EB;
 }
 
 /* Secciones */
