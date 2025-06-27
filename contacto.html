@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto | Fotografía de Propiedades Puerto Rico</title>
+  <meta name="description" content="Contáctanos para obtener fotografía profesional para propiedades en venta, alquiler, AirBnbs y negocios en Puerto Rico.">
+  <meta name="keywords" content="fotografía inmobiliaria, contacto, propiedades, Puerto Rico">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { font-family: 'Poppins', sans-serif; background: #ffffff; color: #1E3A8A; }
+
+    header { position: fixed; top: 0; left: 0; width: 100%; background: #ffffff; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; }
+    .logo img { height: 60px; width: auto; }
+
+    nav { display: flex; gap: 20px; }
+    nav a { color: #1E3A8A; text-decoration: none; font-weight: 600; padding: 8px 10px; border-radius: 4px; transition: background 0.3s ease; }
+    nav a:hover { background: #1E3A8A; color: #ffffff; }
+
+    .hamburger { display: none; flex-direction: column; cursor: pointer; width: 25px; height: 20px; justify-content: space-between; }
+    .hamburger div { width: 100%; height: 3px; background: #1E3A8A; border-radius: 2px; transition: all 0.3s ease; }
+
+    @media (max-width: 768px) {
+      nav { position: fixed; top: 60px; right: 0; background: #ffffff; flex-direction: column; width: 200px; height: calc(100% - 60px); padding: 20px; box-shadow: -2px 0 8px rgba(0,0,0,0.1); transform: translateX(100%); transition: transform 0.3s ease; border-left: 1px solid #ddd; }
+      nav.active { transform: translateX(0); }
+      nav a { padding: 15px 10px; font-size: 1.1em; }
+      .hamburger { display: flex; }
+    }
+
+    main { max-width: 500px; margin: 100px auto 40px; padding: 0 20px; text-align: center; }
+    h1 { font-size: 2em; margin-bottom: 20px; }
+
+    form { display: flex; flex-direction: column; gap: 15px; text-align: left; }
+    input, textarea { padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; width: 100%; }
+    button { background: #1E3A8A; color: #ffffff; border: none; padding: 12px; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #2563EB; }
+
+    footer { background: #ffffff; color: #1E3A8A; text-align: center; padding: 20px 10px; border-top: 1px solid #ddd; }
+    footer a { color: #1E3A8A; text-decoration: none; font-weight: 600; }
+    footer a:hover { text-decoration: underline; color: #2563EB; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="Logo-Without-Background-Landscape.png" alt="Logo Fotografía Propiedades">
+      </a>
+    </div>
+    <nav id="nav-menu">
+      <a href="index.html" onclick="closeMenu()">Inicio</a>
+      <a href="todas-fotos.html" onclick="closeMenu()">Todas las Fotos</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <div></div><div></div><div></div>
+    </div>
+  </header>
+
+  <main>
+    <h1>Contáctanos</h1>
+    <form>
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu correo electrónico" required>
+      <textarea rows="5" placeholder="Cuéntanos sobre tu propiedad"></textarea>
+      <button type="submit">Enviar Mensaje</button>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2025 Fotografía Inmobiliaria | <a href="index.html">Inicio</a>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+    function closeMenu() {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    }
+  </script>
+</body>
+</html>
