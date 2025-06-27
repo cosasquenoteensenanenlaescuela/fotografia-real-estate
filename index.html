@@ -8,17 +8,20 @@
   <meta name="keywords" content="fotografía inmobiliaria, fotos propiedades, fotografía AirBnb, alquiler, venta, negocios, Puerto Rico, real estate photography">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
-  <style>
+  /* Reset y estructura */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body, html {
+html, body {
+  width: 100%;
+  height: 100%;
   font-family: 'Poppins', sans-serif;
-  background: #ffffff;
-  color: #1E3A8A;
+  overflow-x: hidden;
 }
+
+/* Header */
 header {
   position: fixed;
   top: 0;
@@ -33,7 +36,7 @@ header {
   z-index: 1000;
 }
 .logo img {
-  height: 60px;
+  height: 70px;
   width: auto;
 }
 nav {
@@ -106,36 +109,68 @@ nav a:hover {
   }
 }
 
-/* Hero */
+/* HERO */
 .hero {
-    width: 100%;
-    height: 100vh;
-    background: url('photos/2.jpeg') center center / cover no-repeat;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://source.unsplash.com/1600x900/?modern-house') center center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  color: #ffffff;
+  position: relative;
 }
-
-.hero h1 {
+.hero::before {
+  content: '';
+  position: absolute;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.hero-content h1 {
   font-size: 3em;
   max-width: 90%;
+  margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
-.hero p {
+.hero-content p {
   font-size: 1.2em;
-  margin-top: 15px;
+  margin-bottom: 30px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+.hero-content a {
+  display: inline-block;
+  background: #1E3A8A;
+  color: #ffffff;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+.hero-content a:hover {
+  background: #2563EB;
 }
 
 @media (max-width: 768px) {
-  .hero h1 {
+  .hero-content h1 {
     font-size: 2em;
   }
-  .hero p {
+  .hero-content p {
     font-size: 1em;
   }
 }
 
-/* General Sections */
+/* Secciones */
 section {
-  padding: 60px 20px;
+  padding: 80px 20px;
   max-width: 1000px;
   margin: auto;
 }
@@ -145,22 +180,22 @@ h2 {
   margin-bottom: 30px;
 }
 
-/* Gallery */
+/* Galería */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
 }
-.gallery img {
+.gallery a img {
   width: 100%;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
-.gallery img:hover {
+.gallery a img:hover {
   transform: scale(1.05);
 }
 
-/* Contact Form */
+/* Formulario */
 form {
   display: flex;
   flex-direction: column;
@@ -204,7 +239,6 @@ footer a:hover {
   text-decoration: underline;
   color: #2563EB;
 }
-</style>
 </head>
 <body>
 
