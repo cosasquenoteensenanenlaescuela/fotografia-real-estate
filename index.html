@@ -20,14 +20,14 @@
       line-height: 1.6;
     }
 
-    /* Header fijo arriba */
+    /* Header fijo arriba, blanco con texto azul */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: #1E3A8A;
-      color: white;
+      background: #ffffff;
+      color: #1E3A8A;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -49,16 +49,17 @@
     }
 
     nav a {
-      color: white;
+      color: #1E3A8A;
       text-decoration: none;
       font-weight: 600;
       padding: 8px 10px;
       border-radius: 4px;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     nav a:hover {
-      background: #2563EB;
+      background: #1E3A8A;
+      color: white;
     }
 
     /* Botón hamburger */
@@ -74,7 +75,7 @@
     .hamburger div {
       width: 100%;
       height: 3px;
-      background: white;
+      background: #1E3A8A;
       border-radius: 2px;
       transition: all 0.3s ease;
     }
@@ -96,13 +97,15 @@
         position: fixed;
         top: 60px; /* altura header */
         right: 0;
-        background: #1E3A8A;
+        background: #ffffff;
         flex-direction: column;
         width: 200px;
         height: calc(100% - 60px);
         padding: 20px;
+        box-shadow: -2px 0 8px rgba(0,0,0,0.1);
         transform: translateX(100%);
         transition: transform 0.3s ease;
+        border-left: 1px solid #ddd;
       }
 
       nav.active {
@@ -112,6 +115,12 @@
       nav a {
         padding: 15px 10px;
         font-size: 1.2em;
+        color: #1E3A8A;
+      }
+
+      nav a:hover {
+        background: #1E3A8A;
+        color: white;
       }
 
       .hamburger {
@@ -128,8 +137,9 @@
       padding-right: 20px;
     }
 
-    /* Hero grande (solo visual, bajo header) */
+    /* Hero al 100% ancho, fondo y texto azul */
     .hero {
+      width: 100vw;
       height: 80vh;
       background: url('https://source.unsplash.com/1600x900/?modern-house') center center/cover no-repeat;
       display: flex;
@@ -137,27 +147,27 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      color: white;
-      border-radius: 8px;
+      color: #1E3A8A;
+      border-radius: 0;
       margin-bottom: 60px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.5); /* sutil overlay blanco para legibilidad */
     }
 
     .hero h1 {
       font-size: 3em;
       font-weight: 600;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
       margin-bottom: 15px;
+      text-shadow: 0 1px 4px rgba(255,255,255,0.8);
     }
 
     .hero p {
       font-size: 1.3em;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
       margin-bottom: 25px;
+      text-shadow: 0 1px 4px rgba(255,255,255,0.8);
     }
 
     .btn {
-      background: #3B82F6;
+      background: #1E3A8A;
       color: white;
       padding: 12px 30px;
       border: none;
@@ -231,14 +241,15 @@
     }
 
     footer {
-      background: #1E3A8A;
-      color: white;
+      background: #ffffff;
+      color: #1E3A8A;
       text-align: center;
       padding: 20px 10px;
+      border-top: 1px solid #ddd;
     }
 
     footer a {
-      color: #3B82F6;
+      color: #1E3A8A;
       text-decoration: none;
       margin: 0 10px;
       font-weight: 600;
@@ -246,6 +257,7 @@
 
     footer a:hover {
       text-decoration: underline;
+      color: #2563EB;
     }
   </style>
 </head>
@@ -283,68 +295,6 @@
         <img src="https://source.unsplash.com/600x400/?kitchen" alt="Cocina amplia" />
         <img src="https://source.unsplash.com/600x400/?bedroom" alt="Habitación elegante" />
         <img src="https://source.unsplash.com/600x400/?bathroom" alt="Baño moderno" />
-        <img src="https://source.unsplash.com/600x400/?garden" alt="Jardín atractivo" />
-        <img src="https://source.unsplash.com/600x400/?apartment" alt="Apartamento moderno" />
-      </div>
-    </section>
+        <img src="https://source.unsplash.com
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <form id="contactForm">
-        <input type="text" name="name" placeholder="Tu nombre" required />
-        <input type="email" name="email" placeholder="Tu correo electrónico" required />
-        <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
-        <button type="submit">Enviar Mensaje</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 Fotografía Inmobiliaria |
-    <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a> |
-    <a href="mailto:tuemail@dominio.com">Correo</a>
-  </footer>
-
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('active');
-
-      // Accessibility toggle
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', !expanded);
-    });
-
-    // Close menu on link click (mobile)
-    function closeMenu() {
-      if(window.innerWidth <= 768) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', false);
-      }
-    }
-
-    // Optional: close menu if window resizes bigger
-    window.addEventListener('resize', () => {
-      if(window.innerWidth > 768) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', false);
-      }
-    });
-
-    // Form submission alert
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('¡Gracias por contactarnos! Responderemos pronto.');
-      form.reset();
-      closeMenu();
-    });
-  </script>
-</body>
-</html>
 
