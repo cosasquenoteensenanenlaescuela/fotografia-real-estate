@@ -2,9 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fotografía Inmobiliaria</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -20,72 +20,156 @@
       line-height: 1.6;
     }
 
+    /* Header fijo arriba */
     header {
-      height: 100vh;
-      background: url('https://source.unsplash.com/1600x900/?modern-house') center center/cover no-repeat;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #1E3A8A;
+      color: white;
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      color: #ffffff;
-      padding: 20px;
+      justify-content: space-between;
+      padding: 10px 20px;
+      z-index: 10000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    header h1 {
-      font-size: 3em;
-      font-weight: 600;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    /* Logo */
+    .logo img {
+      height: 40px;
+      width: auto;
     }
 
-    header p {
-      font-size: 1.2em;
-      margin: 15px 0;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
-
-    .btn {
-      background: #3B82F6;
-      color: #fff;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1em;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.3s ease;
-      margin-top: 15px;
-    }
-
-    .btn:hover {
-      background: #2563EB;
-    }
-
+    /* Navegación */
     nav {
-      background: #1E3A8A;
       display: flex;
-      justify-content: center;
       gap: 20px;
-      padding: 12px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      background: #2563EB;
     }
 
-    section {
-      padding: 60px 20px;
+    /* Botón hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 25px;
+      height: 20px;
+      justify-content: space-between;
+    }
+
+    .hamburger div {
+      width: 100%;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* Cuando el menú está activo */
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Menú móvil */
+    @media (max-width: 768px) {
+      nav {
+        position: fixed;
+        top: 60px; /* altura header */
+        right: 0;
+        background: #1E3A8A;
+        flex-direction: column;
+        width: 200px;
+        height: calc(100% - 60px);
+        padding: 20px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+      }
+
+      nav.active {
+        transform: translateX(0);
+      }
+
+      nav a {
+        padding: 15px 10px;
+        font-size: 1.2em;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Para que el contenido no quede detrás del header */
+    main, section, footer {
+      padding-top: 70px;
       max-width: 1000px;
       margin: auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    /* Hero grande (solo visual, bajo header) */
+    .hero {
+      height: 80vh;
+      background: url('https://source.unsplash.com/1600x900/?modern-house') center center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      border-radius: 8px;
+      margin-bottom: 60px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      font-weight: 600;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.3em;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background: #3B82F6;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #2563EB;
     }
 
     section h2 {
@@ -99,6 +183,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+      margin-bottom: 80px;
     }
 
     .gallery img {
@@ -119,7 +204,7 @@
       flex-direction: column;
       gap: 15px;
       max-width: 500px;
-      margin: auto;
+      margin: auto 0 80px;
     }
 
     input, textarea {
@@ -127,6 +212,7 @@
       font-size: 1em;
       border: 1px solid #ccc;
       border-radius: 5px;
+      resize: vertical;
     }
 
     button {
@@ -148,13 +234,14 @@
       background: #1E3A8A;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 20px 10px;
     }
 
     footer a {
       color: #3B82F6;
       text-decoration: none;
       margin: 0 10px;
+      font-weight: 600;
     }
 
     footer a:hover {
@@ -164,54 +251,100 @@
 </head>
 <body>
 
-  <header id="inicio">
-    <h1>Fotografía Inmobiliaria</h1>
-    <p>Capturamos imágenes que venden propiedades</p>
-    <a href="#galeria" class="btn">Ver Portafolio</a>
+  <header>
+    <div class="logo">
+      <img src="https://via.placeholder.com/150x40?text=LOGO" alt="Logo Fotografía" />
+    </div>
+
+    <nav id="nav-menu">
+      <a href="#inicio" onclick="closeMenu()">Inicio</a>
+      <a href="#galeria" onclick="closeMenu()">Galería</a>
+      <a href="#contacto" onclick="closeMenu()">Contacto</a>
+    </nav>
+
+    <div class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </header>
 
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#galeria">Galería</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+  <main>
+    <section class="hero" id="inicio">
+      <h1>Fotografía Inmobiliaria</h1>
+      <p>Capturamos imágenes que venden propiedades</p>
+      <a href="#galeria" class="btn">Ver Portafolio</a>
+    </section>
 
-  <section id="galeria">
-    <h2>Galería</h2>
-    <div class="gallery">
-      <img src="https://source.unsplash.com/600x400/?living-room" alt="Sala moderna">
-      <img src="https://source.unsplash.com/600x400/?kitchen" alt="Cocina amplia">
-      <img src="https://source.unsplash.com/600x400/?bedroom" alt="Habitación elegante">
-      <img src="https://source.unsplash.com/600x400/?bathroom" alt="Baño moderno">
-      <img src="https://source.unsplash.com/600x400/?garden" alt="Jardín atractivo">
-      <img src="https://source.unsplash.com/600x400/?apartment" alt="Apartamento moderno">
-    </div>
-  </section>
+    <section id="galeria">
+      <h2>Galería</h2>
+      <div class="gallery">
+        <img src="https://source.unsplash.com/600x400/?living-room" alt="Sala moderna" />
+        <img src="https://source.unsplash.com/600x400/?kitchen" alt="Cocina amplia" />
+        <img src="https://source.unsplash.com/600x400/?bedroom" alt="Habitación elegante" />
+        <img src="https://source.unsplash.com/600x400/?bathroom" alt="Baño moderno" />
+        <img src="https://source.unsplash.com/600x400/?garden" alt="Jardín atractivo" />
+        <img src="https://source.unsplash.com/600x400/?apartment" alt="Apartamento moderno" />
+      </div>
+    </section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <form id="contactForm">
-      <input type="text" name="name" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo electrónico" required>
-      <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
-      <button type="submit">Enviar Mensaje</button>
-    </form>
-  </section>
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Tu nombre" required />
+        <input type="email" name="email" placeholder="Tu correo electrónico" required />
+        <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar Mensaje</button>
+      </form>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 Fotografía Inmobiliaria |
-    <a href="https://instagram.com/" target="_blank">Instagram</a> |
+    <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a> |
     <a href="mailto:tuemail@dominio.com">Correo</a>
   </footer>
 
   <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+
+      // Accessibility toggle
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+    });
+
+    // Close menu on link click (mobile)
+    function closeMenu() {
+      if(window.innerWidth <= 768) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', false);
+      }
+    }
+
+    // Optional: close menu if window resizes bigger
+    window.addEventListener('resize', () => {
+      if(window.innerWidth > 768) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', false);
+      }
+    });
+
+    // Form submission alert
     const form = document.getElementById('contactForm');
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       alert('¡Gracias por contactarnos! Responderemos pronto.');
       form.reset();
+      closeMenu();
     });
   </script>
-
 </body>
 </html>
+
