@@ -31,7 +31,7 @@ nav a:hover { background: #1E3A8A; color: #ffffff; }
 .hero {
   width: 100vw;
   height: 100vh;
-  background: url('https://source.unsplash.com/1600x900/?modern-house') center center / cover no-repeat;
+  background: url('photos/2.jpeg') center center / cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
