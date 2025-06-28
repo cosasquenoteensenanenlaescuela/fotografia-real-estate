@@ -1,7 +1,7 @@
 /* Reset y estructura */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { width: 100%; height: 100%; font-family: 'Poppins', sans-serif; overflow-x: hidden; background: #ffffff; color: #1E3A8A; }
-
+ 
 /* Header */
 header { 
   position: fixed; top: 0; left: 0; width: 100%;
